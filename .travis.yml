@@ -23,7 +23,7 @@ script:
   - coveralls
   - cd examples/petstore && docker-compose up --build -d
   - docker ps
-  - "curl -sL -w '%{http_code}' -X POST 'http://localhost/pets' -H 'accept: application/json' -H 'Content-Type: application/json' -d \"{\"name\":\"karl\",\"tag\":\"frog\"}\" -o /dev/null"
+  - "curl -sL -w '%{http_code}' -X POST 'http://localhost:80/pets' -H 'accept: application/json' -H 'Content-Type: application/json' -d \"{\"name\":\"karl\",\"tag\":\"frog\"}\" -o /dev/null"
 
 jobs:
   include:
